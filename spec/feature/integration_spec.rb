@@ -10,10 +10,10 @@ RSpec.describe 'Creating a book with', type: :feature do
         fill_in 'Published date', with: '1989-09-14'
         click_on 'Create Book'
         expect(page).to have_content('The 7 Habits of Highly Effective People')
+        click_on 'Show'
         expect(page).to have_content('Steven Covey')
         expect(page).to have_content('9')
         expect(page).to have_content('1989-09-14')
-        visit books_path
         expect(page).to have_content('The 7 Habits of Highly Effective People')
     end
 
@@ -44,5 +44,5 @@ RSpec.describe 'Creating a book with', type: :feature do
         click_on 'Create Book'
         expect(page).to have_content("Published date can't be blank")
     end
-  
+
 end
