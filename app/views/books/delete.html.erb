@@ -1,0 +1,12 @@
+<%= page_heading "Delete Book?" %>
+
+
+<%= form_for(@book, :method => 'delete') do |f| %>
+
+<p>Are you sure you want to delete this book?</p>
+<p><%= @book.title %></p>
+
+<%= f.submit("Delete") %>
+<% end %>
+
+<%= link_to 'Cancel', books_path %>
